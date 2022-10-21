@@ -1,14 +1,15 @@
 <template>
     <form @submit.prevent="SubmitContact($event)">
         <div> 
+          
             <label for="">{{contact.name}}</label>
-            <input type="text" name="name" v-model="contact.name" id="name"/>
+            <input type="text" placeholder="Name" name="name" v-model="contact.name" id="name"/>
             <label for="">{{contact.phone}}</label>
-            <input type="text" name="phone" v-model="contact.phone" id="phone"/>
+            <input type="text" placeholder="Phone" name="phone" v-model="contact.phone" id="phone"/>
             <label for="">{{contact.email}}</label>
-            <input type="text" name="email"  v-model="contact.email" id="email"/>
+            <input type="text" placeholder="Email" name="email"  v-model="contact.email" id="email"/>
             <label for="">{{contact.address}}</label>
-            <input type="text" name="address"  v-model="contact.address" id="address"/>
+            <input type="text" placeholder="Address" name="address"  v-model="contact.address" id="address"/>
             <div class="error">{{error}}</div>
             <input type="submit"  />
         </div>
@@ -18,7 +19,7 @@
 <script>
       import Contact from '../models/Contact'
       import ContactList from './ContactList.vue'
-      //import validations from '../validations/validations'
+      import validateData from '../validations/validations'
       import { useFormContactStore } from '../store/FormContactStore'
       import { useListContactStore } from '../store/ListFormStore'
       import {mapActions}   from  'pinia'
@@ -42,10 +43,8 @@ export default {
         ...mapActions(useListContactStore,['createList','editList']),
  
         SubmitContact(e) {
-
-            if(this.contact.name == null){
-                alert("Name empty")
-            }else{
+           if(validateData(this.contact))
+         
                 if(!this.contact.id){
                     this.createList(this.contact)
                     this.contact = new Contact()
@@ -55,7 +54,7 @@ export default {
                     this.contact = new Contact()
                     
                 }
-            }
+            
         },
         
     },
