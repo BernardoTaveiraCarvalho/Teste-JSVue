@@ -52,11 +52,8 @@ export default {
                     this.editList(this.contact)
                    
                     this.contact = new Contact()
-                    
                 }
-            
         },
-        
     },
     emits:['createList','editList'],
     components: { ContactList }

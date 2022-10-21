@@ -1,10 +1,10 @@
 <template>
     
     <ul>
-        <li>{{localContact.name}}</li>
-        <li>{{localContact.phone}}</li>
-        <li>{{localContact.email}}</li>
-        <li>{{localContact.address}}</li>
+        <li>  Name: {{localContact.name}}</li>
+        <li><span v-if="localContact.phone!=null">Phone: </span>{{localContact.phone}}</li>
+        <li><span v-if="localContact.email!=null">Email: </span>{{localContact.email}}</li>
+        <li><span v-if="localContact.address!=null">Address: </span> {{localContact.address}}</li>
         <button @click="editContact(localContact)">Edit</button>
         <button @click="detailContact(localContact)">View</button>
         <button @click="deleteContact(localContact)">Delete</button>

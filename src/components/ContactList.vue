@@ -30,10 +30,6 @@
         return  this.contactList
     }
 }, 
-methods:{
- 
-    
-},
     components: { ContactLi }
 }
 </script>
