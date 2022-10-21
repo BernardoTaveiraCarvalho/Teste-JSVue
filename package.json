@@ -1,0 +1,22 @@
+{
+  "name": "vuefirstproject",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "pinia": "^2.0.23",
+    "uuid": "^9.0.0",
+    "vue": "^3.2.41",
+    "vue-localstorage": "^0.6.2",
+    "vue-router": "^4.1.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.1.0",
+    "vite": "^3.1.8"
+  }
+}
