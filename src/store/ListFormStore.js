@@ -37,7 +37,7 @@ export const useListContactStore = defineStore('ListFormStore',{
             element.copyObject(contact)
             localStorage.setItem('contactArray', JSON.stringify(this.contactList))
           },
-          deleteTask(contact){
+          deleteContact(contact){
        
             for(let i =0;i<this.contactList.length;i++){
                 console.log(this.contactList)
