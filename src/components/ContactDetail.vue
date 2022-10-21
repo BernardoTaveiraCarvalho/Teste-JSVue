@@ -16,7 +16,7 @@
             this.createListFormLocalStore()
         },
     methods: {
-    ...mapActions( useListTaskStore,['findContact','createListFormLocalStore'])
+    ...mapActions(useListContactStore,['findContact','createListFormLocalStore'])
     },
   
   }
@@ -25,9 +25,9 @@
   <template>
  
    <ul>
-        <li>{{findTask($route.params.id).name}}</li>
-        <li>{{findTask($route.params.id).phone}}</li>
-        <li>{{findTask($route.params.id).email}}</li>
-        <li>{{findTask($route.params.id).address}}</li>
+        <li>{{findContact($route.params.id).name}}</li>
+        <li>{{findContact($route.params.id).phone}}</li>
+        <li>{{findContact($route.params.id).email}}</li>
+        <li>{{findContact($route.params.id).address}}</li>
     </ul>
    </template>

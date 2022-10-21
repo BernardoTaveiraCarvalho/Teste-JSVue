@@ -1,12 +1,14 @@
 <template>
     <form @submit.prevent="SubmitContact($event)">
         <div> 
+            <label for="">{{contact.name}}</label>
+            <input type="text" name="name" v-model="contact.name" id="name"/>
             <label for="">{{contact.phone}}</label>
             <input type="text" name="phone" v-model="contact.phone" id="phone"/>
             <label for="">{{contact.email}}</label>
-            <input type="checkbox" name="email"  v-model="contact.email" id="email"/>
+            <input type="text" name="email"  v-model="contact.email" id="email"/>
             <label for="">{{contact.address}}</label>
-            <input type="checkbox" name="address"  v-model="contact.address" id="address"/>
+            <input type="text" name="address"  v-model="contact.address" id="address"/>
             <div class="error">{{error}}</div>
             <input type="submit"  />
         </div>
@@ -33,20 +35,18 @@ export default {
     ]   ,
    
    computed: {
-    ...mapWritableState(useFormTaskStore,['contact']),
+    ...mapWritableState(useFormContactStore ,['contact']),
 },
   
     methods: {
-        ...mapActions(useListTaskStore,['createList','editList']),
+        ...mapActions(useListContactStore,['createList','editList']),
  
-        SubmitTask(e) {
+        SubmitContact(e) {
 
             if(this.contact.name == null){
                 alert("Name empty")
             }else{
                 if(!this.contact.id){
-                    this.error=validations(this.contact)
-                    console.log(this.error)
                     this.createList(this.contact)
                     this.contact = new Contact()
                 }else{

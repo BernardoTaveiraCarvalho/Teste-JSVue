@@ -2,7 +2,7 @@
  
  
  import {RouterView,RouterLink} from 'vue-router';
- import { useContactTaskStore } from '../store/ListFormStore'
+ import { useListContactStore } from '../store/ListFormStore'
  import { mapState } from 'pinia'
  import {mapActions}   from  'pinia'
   export default {
@@ -19,7 +19,7 @@
       }
     },
     methods: {
-    ...mapActions( useListTaskStore,['createListFormLocalStore'])
+    ...mapActions( useListContactStore,['createListFormLocalStore'])
     },
     computed: {
 
@@ -46,7 +46,7 @@
     background-size: 100% 100%;
    }
    ul {
-  
+   list-style-type: none;
 	padding: 0;
 	
 }

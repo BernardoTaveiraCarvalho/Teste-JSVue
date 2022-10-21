@@ -1,12 +1,7 @@
 <template>
 <div>
-  Filter Table: <select v-model="selectedOption" @change="handleChange" name="filter" id="filter">
-  <option value=1>True</option>
-  <option value=0>False</option>
-  <option selected value=null>None</option>
-  </select>
     <ul>
-        <ContactLi   v-for="task in SetContactList" :task="task" :key="task.id" ></ContactLi>
+        <ContactLi   v-for="contact in contactList" :contact="contact" :key="contact.id" ></ContactLi>
     </ul>
 </div>
 </template>
@@ -15,7 +10,7 @@
     import ContactLi from './ContactLi.vue';
     import { mapState } from 'pinia'
     import {mapActions} from 'pinia'
-    import { useListContactStore } from '../store/ListFormContact'
+    import { useListContactStore } from '../store/ListFormStore'
     export default{
         data (){
             return {
@@ -23,7 +18,7 @@
             }
         },
         computed: {
-    ...mapState(useListTaskStore,['contactList','filterList','getContactListFinish','getContactListDontFinish']),
+    ...mapState(useListContactStore,['contactList','filterList']),
     SetTaskList(){
         if(this.selectedOption == 1){
             console.log("a")
@@ -52,7 +47,7 @@ div{
     justify-items: center;
 }
 ul{
-    list-style-type: none;
+   
     justify-content: center;
     align-self: center;
 }

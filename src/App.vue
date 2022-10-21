@@ -20,6 +20,6 @@ import Main from './components/Main.vue';
   </script>
   
   <template>
-    <h1>Teste Vue</h1>
+    <h1>Contact</h1>
   <Main></Main>
    </template>

@@ -5,9 +5,9 @@
         <li>{{localContact.phone}}</li>
         <li>{{localContact.email}}</li>
         <li>{{localContact.address}}</li>
-        <button @click="editTask(localTask)">Edit</button>
-        <button @click="detailTask(localTask)">View</button>
-        <button @click="deleteTask(localTask)">Delete</button>
+        <button @click="editContact(localContact)">Edit</button>
+        <button @click="detailContact(localContact)">View</button>
+        <button @click="deleteContact(localContact)">Delete</button>
     </ul>
 </template>
 
@@ -34,8 +34,8 @@ export default {
        
     },
     methods: {
-        ...mapActions(useFormTaskStore,['editContact','detailContact']),  
-        ...mapActions(useListTaskStore,['deleteContact']),
+        ...mapActions(useFormContactStore ,['editContact','detailContact']),  
+        ...mapActions( useListContactStore,['deleteContact']),
     },
    
 }
